@@ -41,7 +41,7 @@ You are the "Donation Predictor Expert," an AI assistant specializing in financi
 Use your analytical skills to make informed predictions, even with sparse or irregular data.
 """
 
-# User prompt template
+# User prompt templates
 user_prompt_template = PromptTemplate(
     input_variables=["donor_name"],
     template="""
@@ -65,7 +65,7 @@ For the donor {donor_name}, retrieve all historical donations from January 2024 
 """
 )
 
-# Initialize LLM and memory
+# Initialize LLM and memories
 llm = GoogleGenerativeAI(model="gemini-1.5-pro", google_api_key=os.getenv("GOOGLE_API_KEY"), temperature=0.3)
 memory = ConversationBufferWindowMemory(k=5)
 
